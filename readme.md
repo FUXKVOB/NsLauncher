@@ -33,7 +33,7 @@
 ## 📸 Скриншоты
 
 <div align="center">
-<img src="screenshot.png" alt="NsLauncher" width="800">
+<img src="5375323967096295648.jpg" alt="NsLauncher" width="800">
 </div>
 
 ---
