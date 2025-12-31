@@ -1,23 +1,23 @@
 {
-  "version": "2.1.0",
-  "build": 210,
+  "version": "3.0.0",
+  "build": 300,
   "download_url": "https://github.com/FUXKVOB/NsLauncher/releases/latest/download/NsLauncher_Setup.exe",
-  "release_date": "2025-12-31",
+  "release_date": "2025-01-01",
   "required": false,
   "changelog": {
     "ru": [
-      "✨ Мультиязычность (RU/EN)",
-      "🎨 Тёмная и светлая тема",
-      "ℹ️ Раздел О программе",
-      "🔗 Ссылки на GitHub и Telegram",
-      "🛠 Улучшенный интерфейс"
+      "🔄 Автообновление лаунчера",
+      "🧵 Поддержка Fabric Loader",
+      "🌐 Список серверов",
+      "✨ Улучшенный интерфейс",
+      "🐛 Исправлены ошибки"
     ],
     "en": [
-      "✨ Multi-language support (RU/EN)",
-      "🎨 Dark and light theme",
-      "ℹ️ About section",
-      "🔗 Links to GitHub and Telegram",
-      "🛠 Improved interface"
+      "🔄 Auto-update launcher",
+      "🧵 Fabric Loader support", 
+      "🌐 Server list",
+      "✨ Improved interface",
+      "🐛 Bug fixes"
     ]
   }
 }
