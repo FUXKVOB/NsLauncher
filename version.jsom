@@ -1,0 +1,23 @@
+{
+  "version": "2.1.0",
+  "build": 210,
+  "download_url": "https://github.com/FUXKVOB/NsLauncher/releases/latest/download/NsLauncher_Setup.exe",
+  "release_date": "2025-12-31",
+  "required": false,
+  "changelog": {
+    "ru": [
+      "✨ Мультиязычность (RU/EN)",
+      "🎨 Тёмная и светлая тема",
+      "ℹ️ Раздел О программе",
+      "🔗 Ссылки на GitHub и Telegram",
+      "🛠 Улучшенный интерфейс"
+    ],
+    "en": [
+      "✨ Multi-language support (RU/EN)",
+      "🎨 Dark and light theme",
+      "ℹ️ About section",
+      "🔗 Links to GitHub and Telegram",
+      "🛠 Improved interface"
+    ]
+  }
+}
