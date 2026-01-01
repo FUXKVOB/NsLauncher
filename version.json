@@ -1,23 +1,31 @@
 {
-  "version": "3.0.0",
-  "build": 300,
+  "version": "4.0.0",
+  "build": 400,
   "download_url": "https://github.com/FUXKVOB/NsLauncher/releases/latest/download/NsLauncher_Setup.exe",
-  "release_date": "2025-12-31",
+  "release_date": "2026-01-01",
   "required": false,
   "changelog": {
     "ru": [
-      "🔄 Автообновление лаунчера",
-      "🧵 Поддержка Fabric Loader",
-      "🌐 Список серверов",
-      "✨ Улучшенный интерфейс",
-      "🐛 Исправлены ошибки"
+      "🎯 Умный пинг серверов (не постоянный)",
+      "🛠 Диагностика установки Fabric",
+      "📊 Улучшенная аналитика времени игры",
+      "🔌 Offline-first архитектура",
+      "📁 Проверка безопасности папок",
+      "✨ Обновлённый дизайн интерфейса",
+      "🎨 UX улучшения и анимации",
+      "📝 Умное логирование",
+      "⚡ Оптимизация производительности"
     ],
     "en": [
-      "🔄 Auto-update launcher",
-      "🧵 Fabric Loader support", 
-      "🌐 Server list",
-      "✨ Improved interface",
-      "🐛 Bug fixes"
+      "🎯 Smart server ping (not constant)",
+      "🛠 Fabric installation diagnostics",
+      "📊 Enhanced game time analytics",
+      "🔌 Offline-first architecture",
+      "📁 Safe folder validation",
+      "✨ Refreshed interface design",
+      "🎨 UX improvements and animations",
+      "📝 Smart logging system",
+      "⚡ Performance optimization"
     ]
   }
 }
