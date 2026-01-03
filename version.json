@@ -1,31 +1,33 @@
 {
-  "version": "4.0.0",
-  "build": 400,
+  "version": "4.1.0",
+  "build": 410,
   "download_url": "https://github.com/FUXKVOB/NsLauncher/releases/latest/download/NsLauncher_Setup.exe",
-  "release_date": "2026-01-01",
+  "release_date": "2025-01-03",
   "required": false,
   "changelog": {
     "ru": [
-      "🎯 Умный пинг серверов (не постоянный)",
-      "🛠 Диагностика установки Fabric",
-      "📊 Улучшенная аналитика времени игры",
-      "🔌 Offline-first архитектура",
-      "📁 Проверка безопасности папок",
-      "✨ Обновлённый дизайн интерфейса",
-      "🎨 UX улучшения и анимации",
-      "📝 Умное логирование",
-      "⚡ Оптимизация производительности"
+      "🧩 Новая система NsMods для управления модами",
+      "📦 Поддержка загрузки модов из GitHub",
+      "🔧 ИСПРАВЛЕНО: Fabric версии теперь действительно скачиваются",
+      "📚 Добавлена загрузка всех библиотек Fabric",
+      "⬆️ Обновлены все зависимости до последних версий",
+      "🎨 Улучшен дизайн интерфейса",
+      "🐛 Исправлены баги и оптимизирован код",
+      "🔍 Поиск и фильтрация модов",
+      "✅ Проверка совместимости модов с версиями MC",
+      "⚡ Улучшена производительность и стабильность"
     ],
     "en": [
-      "🎯 Smart server ping (not constant)",
-      "🛠 Fabric installation diagnostics",
-      "📊 Enhanced game time analytics",
-      "🔌 Offline-first architecture",
-      "📁 Safe folder validation",
-      "✨ Refreshed interface design",
-      "🎨 UX improvements and animations",
-      "📝 Smart logging system",
-      "⚡ Performance optimization"
+      "🧩 New NsMods system for mod management",
+      "📦 GitHub mod loading support",
+      "🔧 FIXED: Fabric versions now actually download",
+      "📚 Added downloading of all Fabric libraries",
+      "⬆️ Updated all dependencies to latest versions",
+      "🎨 Improved interface design",
+      "🐛 Fixed bugs and optimized code",
+      "🔍 Mod search and filtering",
+      "✅ Mod compatibility checking with MC versions",
+      "⚡ Improved performance and stability"
     ]
   }
 }
