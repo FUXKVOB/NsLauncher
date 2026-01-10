@@ -1,0 +1,36 @@
+{
+  "name": "nslauncher-electron",
+  "version": "1.0.0",
+  "description": "Modern Minecraft launcher built with Electron",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win --x64"
+  },
+  "keywords": ["minecraft", "launcher", "electron"],
+  "author": "FUXKVOB",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.1.0",
+    "electron-builder": "^24.9.1"
+  },
+  "dependencies": {
+    "axios": "^1.6.5",
+    "uuid": "^9.0.1",
+    "adm-zip": "^0.5.10"
+  },
+  "build": {
+    "appId": "com.nslauncher.app",
+    "productName": "NsLauncher",
+    "win": {
+      "target": ["nsis"],
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

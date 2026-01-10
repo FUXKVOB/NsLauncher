@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NsLauncher</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Title Bar -->
+  <div class="title-bar">
+    <div class="title-bar-left">
+      <div class="app-logo">🚀</div>
+      <div class="app-name">NSLAUNCHER</div>
+    </div>
+    <div class="title-bar-center">
+      <div class="status-indicator" id="statusIndicator">
+        <span class="status-icon">⏱️</span>
+        <span class="status-text" id="statusText">Всего: 0ч 0м</span>
+      </div>
+    </div>
+    <div class="title-bar-right">
+      <button class="lang-toggle" id="langToggle">🇷🇺 RU</button>
+      <button class="theme-toggle" id="themeToggle">🌙</button>
+      <div class="window-controls">
+        <button class="window-btn" id="minimizeBtn">−</button>
+        <button class="window-btn" id="maximizeBtn">□</button>
+        <button class="window-btn close-btn" id="closeBtn">×</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <button class="nav-item active" data-tab="home" title="Главная">
+        <span class="nav-icon">🏠</span>
+      </button>
+      <button class="nav-item" data-tab="servers" title="Серверы">
+        <span class="nav-icon">🌐</span>
+      </button>
+      <button class="nav-item" data-tab="settings" title="Настройки">
+        <span class="nav-icon">⚙️</span>
+      </button>
+      <button class="nav-item" data-tab="stats" title="Статистика">
+        <span class="nav-icon">📊</span>
+      </button>
+      <button class="nav-item" data-tab="about" title="О программе">
+        <span class="nav-icon">ℹ️</span>
+      </button>
+      <div class="sidebar-spacer"></div>
+      <div class="version-badge">v1.0.0</div>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <!-- Home Tab -->
+      <div class="tab-content active" id="homeTab">
+        <div class="home-layout">
+          <!-- Versions Panel -->
+          <div class="versions-panel">
+            <div class="panel-header">
+              <div class="panel-title">
+                <span class="panel-icon">🎮</span>
+                <span>Версии Minecraft</span>
+              </div>
+              <button class="icon-btn" id="refreshVersions">
+                <span>🔄</span>
+              </button>
+            </div>
+
+            <div class="search-bar">
+              <span class="search-icon">🔍</span>
+              <input type="text" id="versionSearch" placeholder="Поиск версии..." />
+            </div>
+
+            <div class="filters">
+              <button class="filter-chip active" data-filter="releases">Релизы</button>
+              <button class="filter-chip" data-filter="snapshots">Снапшоты</button>
+              <button class="filter-chip" data-filter="old">Старые</button>
+            </div>
+
+            <div class="versions-list" id="versionsList">
+              <div class="loading-state">
+                <div class="spinner"></div>
+                <p>Загрузка версий...</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Player Panel -->
+          <div class="player-panel">
+            <div class="player-card">
+              <div class="player-avatar" id="playerAvatar">
+                <img src="https://mc-heads.net/avatar/Player/100" alt="Avatar" />
+              </div>
+              
+              <div class="account-info" id="accountInfo">
+                <div class="account-name">Player</div>
+                <div class="account-type">Offline</div>
+              </div>
+
+              <div class="selected-version" id="selectedVersionDisplay">
+                <span class="version-icon">🎮</span>
+                <span class="version-text">Выберите версию</span>
+              </div>
+
+              <div class="ram-info">
+                <span class="ram-icon">💾</span>
+                <span id="ramDisplay">4.0 ГБ RAM</span>
+              </div>
+            </div>
+
+            <div class="action-buttons">
+              <button class="action-btn" id="downloadBtn">
+                <span>⬇️</span>
+                <span>Скачать</span>
+              </button>
+              <button class="action-btn" id="folderBtn">
+                <span>📁</span>
+                <span>Папка</span>
+              </button>
+            </div>
+
+            <button class="play-button" id="playBtn">
+              <span class="play-icon">▶</span>
+              <span class="play-text">ИГРАТЬ</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Servers Tab -->
+      <div class="tab-content" id="serversTab">
+        <div class="tab-header">
+          <h1>Серверы</h1>
+          <div class="tab-actions">
+            <button class="btn-secondary" id="refreshServers">Обновить</button>
+            <button class="btn-primary" id="addServer">Добавить сервер</button>
+          </div>
+        </div>
+        <div class="servers-grid" id="serversGrid">
+          <div class="empty-state">
+            <span class="empty-icon">🌐</span>
+            <p>Нет добавленных серверов</p>
+            <small>Добавьте сервер чтобы начать</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Settings Tab -->
+      <div class="tab-content" id="settingsTab">
+        <div class="settings-container">
+          <h1>Настройки</h1>
+
+          <div class="settings-card">
+            <div class="settings-card-header">
+              <span class="settings-icon">👤</span>
+              <span>Аккаунт</span>
+            </div>
+            <div class="settings-card-body">
+              <button class="settings-btn" id="manageAccountsBtn">Управление аккаунтами</button>
+            </div>
+          </div>
+
+          <div class="settings-card">
+            <div class="settings-card-header">
+              <span class="settings-icon">☕</span>
+              <span>Java</span>
+            </div>
+            <div class="settings-card-body">
+              <label>Путь к Java</label>
+              <div class="input-group">
+                <input type="text" id="javaPathInput" readonly placeholder="Не указан" />
+                <button class="btn-secondary" id="selectJava">Выбрать</button>
+                <button class="btn-secondary" id="autoJava">Авто</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="settings-card">
+            <div class="settings-card-header">
+              <span class="settings-icon">💾</span>
+              <span>Память</span>
+            </div>
+            <div class="settings-card-body">
+              <label>Выделение RAM: <span id="ramValue">4.0</span> ГБ</label>
+              <input type="range" id="ramSlider" min="1" max="16" step="0.5" value="4" />
+              <div class="range-labels">
+                <span>1 ГБ</span>
+                <span>16 ГБ</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="settings-card">
+            <div class="settings-card-header">
+              <span class="settings-icon">📁</span>
+              <span>Папка игры</span>
+            </div>
+            <div class="settings-card-body">
+              <div class="input-group">
+                <input type="text" id="gameDirInput" readonly />
+                <button class="btn-secondary" id="selectGameDir">Выбрать</button>
+                <button class="btn-secondary" id="openGameDir">Открыть</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="settings-card">
+            <div class="settings-card-header">
+              <span class="settings-icon">🖥️</span>
+              <span>Окно игры</span>
+            </div>
+            <div class="settings-card-body">
+              <div class="toggle-group">
+                <label>Полноэкранный режим</label>
+                <label class="switch">
+                  <input type="checkbox" id="fullscreenToggle" />
+                  <span class="slider"></span>
+                </label>
+              </div>
+              <div class="window-size-group" id="windowSizeGroup">
+                <label>Размер окна</label>
+                <div class="size-inputs">
+                  <input type="number" id="windowWidth" value="1920" min="800" />
+                  <span>×</span>
+                  <input type="number" id="windowHeight" value="1080" min="600" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Tab -->
+      <div class="tab-content" id="statsTab">
+        <div class="stats-container">
+          <div class="stats-header">
+            <h1>Статистика</h1>
+            <button class="btn-secondary" id="resetStats">Сбросить</button>
+          </div>
+
+          <div class="stats-main-card">
+            <div class="stat-icon">⏱️</div>
+            <div class="stat-content">
+              <div class="stat-label">Общее время</div>
+              <div class="stat-value" id="totalTime">0 ч 0 мин</div>
+            </div>
+            <div class="stat-launches">
+              <div class="launches-icon">🚀</div>
+              <div class="launches-value" id="totalLaunches">0</div>
+              <div class="launches-label">Запусков</div>
+            </div>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-card-icon" style="background: rgba(16, 185, 129, 0.15);">
+                <span style="color: #10B981;">📅</span>
+              </div>
+              <div class="stat-card-label">Сегодня</div>
+              <div class="stat-card-value" id="todayTime">0 мин</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card-icon" style="background: rgba(59, 130, 246, 0.15);">
+                <span style="color: #3B82F6;">📊</span>
+              </div>
+              <div class="stat-card-label">За неделю</div>
+              <div class="stat-card-value" id="weekTime">0 мин</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card-icon" style="background: rgba(245, 158, 11, 0.15);">
+                <span style="color: #F59E0B;">⏲️</span>
+              </div>
+              <div class="stat-card-label">Самая длинная сессия</div>
+              <div class="stat-card-value" id="longestSession">0 мин</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- About Tab -->
+      <div class="tab-content" id="aboutTab">
+        <div class="about-container">
+          <div class="about-card">
+            <div class="about-logo">🚀</div>
+            <h1>NsLauncher</h1>
+            <div class="about-version">v1.0.0</div>
+            <p class="about-description">
+              Современный Minecraft лаунчер с поддержкой Fabric
+            </p>
+          </div>
+
+          <div class="settings-card">
+            <div class="settings-card-header">
+              <span class="settings-icon">👨‍💻</span>
+              <span>Разработчик</span>
+            </div>
+            <div class="settings-card-body">
+              <p class="developer-name">FUXKVOB</p>
+            </div>
+          </div>
+
+          <div class="settings-card">
+            <div class="settings-card-header">
+              <span class="settings-icon">🔗</span>
+              <span>Ссылки</span>
+            </div>
+            <div class="settings-card-body">
+              <button class="link-btn" data-url="https://github.com/FUXKVOB/NsLauncher">
+                <span class="link-icon">📦</span>
+                <div class="link-info">
+                  <div class="link-title">GitHub</div>
+                  <div class="link-subtitle">github.com/FUXKVOB/NsLauncher</div>
+                </div>
+                <span class="link-arrow">→</span>
+              </button>
+              <button class="link-btn" data-url="https://t.me/crux222">
+                <span class="link-icon">✈️</span>
+                <div class="link-info">
+                  <div class="link-title">Telegram</div>
+                  <div class="link-subtitle">@crux222</div>
+                </div>
+                <span class="link-arrow">→</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Download Overlay -->
+  <div class="download-overlay" id="downloadOverlay" style="display: none;">
+    <div class="download-card">
+      <div class="download-icon">⬇️</div>
+      <h2 id="downloadTitle">Загрузка...</h2>
+      <p id="downloadStatus">Подготовка...</p>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div class="progress-text" id="progressText">0%</div>
+    </div>
+  </div>
+
+  <!-- Toast Notifications -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
